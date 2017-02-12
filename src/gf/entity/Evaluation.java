@@ -10,41 +10,64 @@ package gf.entity;
  * @author Houssem
  */
 public class Evaluation {
-    
- private    int id_evaluation ;
- private    String note ;
- private    String commentaire ;
+    private int id;
+    private int note;
+    private String commentaire;
+    private int id_evaluateur;
+    private int id_evalue;
 
-    public Evaluation(int id_evaluation, String note, String commentaire) {
-        this.id_evaluation = id_evaluation;
+    public Evaluation() {
+    }
+
+    public Evaluation(int id, int note, String commentaire, int id_evaluateur, int id_evalue) {
+        this.id = id;
         this.note = note;
         this.commentaire = commentaire;
+        this.id_evaluateur = id_evaluateur;
+        this.id_evalue = id_evalue;
     }
 
-    public int getId_evaluation() {
-        return id_evaluation;
+    public int getId_evalue() {
+        return id_evalue;
     }
 
-    public String getNote() {
+    public void setId_evalue(int id_evalue) {
+        this.id_evalue = id_evalue;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getNote() {
         return note;
+    }
+
+    public void setNote(int note) {
+        this.note = note;
     }
 
     public String getCommentaire() {
         return commentaire;
     }
 
-    public void setId_evaluation(int id_evaluation) {
-        this.id_evaluation = id_evaluation;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
-    }
-
     public void setCommentaire(String commentaire) {
         this.commentaire = commentaire;
     }
+
+    public int getId_evaluateur() {
+        return id_evaluateur;
+    }
+
+    public void setId_evaluateur(int id_evaluateur) {
+        this.id_evaluateur = id_evaluateur;
+    }
     
     
     
+
 }

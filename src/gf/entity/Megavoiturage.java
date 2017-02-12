@@ -14,17 +14,24 @@ import java.util.Date;
 public class Megavoiturage {
     
     
- private    int id_megavoiturage ;
- private    int nb_place ;
- private    String source ;
- private    String destination ;
- private    float prix ;
-  private   String description ;
-  private   Date date_pub ;
-  private   Date date_offre ;
+     private int id;
+     private int id_offreur;
+     private int nb_place ;
+     private String source ;
+     private String destination ;
+     private float prix ;
+     private String description ;
+     private Date date_pub ;
+     private Date date_offre ;
+     private int id_offre_accepte;
+     private String etat;
 
-    public Megavoiturage(int id_megavoiturage, int nb_place, String source, String destination, float prix, String description, Date date_pub, Date date_offre) {
-        this.id_megavoiturage = id_megavoiturage;
+    public Megavoiturage() {
+    }
+
+    public Megavoiturage(int id, int id_offreur, int nb_place, String source, String destination, float prix, String description, Date date_pub, Date date_offre, int id_offre_accepte, String etat) {
+        this.id = id;
+        this.id_offreur = id_offreur;
         this.nb_place = nb_place;
         this.source = source;
         this.destination = destination;
@@ -32,14 +39,24 @@ public class Megavoiturage {
         this.description = description;
         this.date_pub = date_pub;
         this.date_offre = date_offre;
+        this.id_offre_accepte = id_offre_accepte;
+        this.etat = etat;
     }
 
-    public int getId_megavoiturage() {
-        return id_megavoiturage;
+    public int getId() {
+        return id;
     }
 
-    public void setId_megavoiturage(int id_megavoiturage) {
-        this.id_megavoiturage = id_megavoiturage;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId_offreur() {
+        return id_offreur;
+    }
+
+    public void setId_offreur(int id_offreur) {
+        this.id_offreur = id_offreur;
     }
 
     public int getNb_place() {
@@ -97,9 +114,21 @@ public class Megavoiturage {
     public void setDate_offre(Date date_offre) {
         this.date_offre = date_offre;
     }
-    
-    
-    
-    
-    
+
+    public int getId_offre_accepte() {
+        return id_offre_accepte;
+    }
+
+    public void setId_offre_accepte(int id_offre_accepte) {
+        this.id_offre_accepte = id_offre_accepte;
+    }
+
+    public String getEtat() {
+        return etat;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
+    }
+        
 }

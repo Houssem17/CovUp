@@ -13,84 +13,102 @@ import java.util.Date;
  */
 public class Agence {
     
- private    int id_agence ;
+ private    int id ;
  private    String nom;
- private    String adresse ;
- private    int tel ;
- private    String e_mail ;
- private    Date date_suspension ;
  private    String login ;
+ private    String password;
+ private    String adresse ;
+ private    String description;
+ private    int tel ;
+ private    String email ;
+ private    Date date_suspension ;
 
-    public Agence(int id_agence, String nom, String adresse, int tel, String e_mail, Date date_suspension, String login) {
-        this.id_agence = id_agence;
-        this.nom = nom;
-        this.adresse = adresse;
-        this.tel = tel;
-        this.e_mail = e_mail;
-        this.date_suspension = date_suspension;
-        this.login = login;
+    public Agence() {
     }
 
-    public int getId_agence() {
-        return id_agence;
+    public Agence(int id, String nom, String login, String password, String adresse, String description, int tel, String email, Date date_suspension) {
+        this.id = id;
+        this.nom = nom;
+        this.login = login;
+        this.password = password;
+        this.adresse = adresse;
+        this.description = description;
+        this.tel = tel;
+        this.email = email;
+        this.date_suspension = date_suspension;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNom() {
         return nom;
     }
 
-    public String getAdresse() {
-        return adresse;
-    }
-
-    public int getTel() {
-        return tel;
-    }
-
-    public String getE_mail() {
-        return e_mail;
-    }
-
-    public Date getDate_suspension() {
-        return date_suspension;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public String getLogin() {
         return login;
     }
 
-    public void setId_agence(int id_agence) {
-        this.id_agence = id_agence;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getAdresse() {
+        return adresse;
     }
 
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getTel() {
+        return tel;
+    }
+
     public void setTel(int tel) {
         this.tel = tel;
     }
 
-    public void setE_mail(String e_mail) {
-        this.e_mail = e_mail;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Date getDate_suspension() {
+        return date_suspension;
     }
 
     public void setDate_suspension(Date date_suspension) {
         this.date_suspension = date_suspension;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
-    
-    
-    
-    
-    
-    
-    
+ 
 }

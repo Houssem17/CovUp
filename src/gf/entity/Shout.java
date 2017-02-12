@@ -13,22 +13,27 @@ import java.util.Date;
  */
 public class Shout {
     
-  private   int id_shout ;
-  private  String text ;
- private    Date date_pub ;
+    private int id;
+    private String text ;
+    private Date date_pub ;
+    private int id_user;
 
-    public Shout(int id_shout, String text, Date date_pub) {
-        this.id_shout = id_shout;
+    public Shout() {
+    }
+
+    public Shout(int id, String text, Date date_pub, int id_user) {
+        this.id = id;
         this.text = text;
         this.date_pub = date_pub;
+        this.id_user = id_user;
     }
 
-    public int getId_shout() {
-        return id_shout;
+    public int getId() {
+        return id;
     }
 
-    public void setId_shout(int id_shout) {
-        this.id_shout = id_shout;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getText() {
@@ -46,8 +51,15 @@ public class Shout {
     public void setDate_pub(Date date_pub) {
         this.date_pub = date_pub;
     }
-    
-    
+
+    public int getId_user() {
+        return id_user;
+    }
+
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
+
     
     
     
