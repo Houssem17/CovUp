@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.validation.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="gf.controller.InscriptionController">
+    <stylesheets>
+        <URL value="@fxml.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="446.0" fitWidth="616.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/bgi.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="14.0" layoutY="14.0" text="Retour" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/retour.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXTextField layoutX="56.0" layoutY="77.0" promptText="Pseudo" />
+      <JFXTextField layoutX="56.0" layoutY="124.0" promptText="Nom" />
+      <JFXTextField layoutX="56.0" layoutY="165.0" promptText="Prenom" />
+      <JFXTextField layoutX="279.0" layoutY="77.0" promptText="Mot de passe" />
+      <JFXTextField layoutX="279.0" layoutY="124.0" promptText="Confirmer mot de passe" />
+      <JFXTextField layoutX="56.0" layoutY="244.0" promptText="Date de naissance" />
+      <JFXTextField layoutX="56.0" layoutY="281.0" promptText="Telephone" />
+      <JFXRadioButton layoutX="114.0" layoutY="217.0" text="Female" />
+      <JFXRadioButton layoutX="46.0" layoutY="217.0" text="Male" />
+      <JFXButton layoutX="280.0" layoutY="189.0" prefHeight="25.0" prefWidth="135.0" text="S'inscrire" textFill="WHITE" />
+   </children>
+</AnchorPane>

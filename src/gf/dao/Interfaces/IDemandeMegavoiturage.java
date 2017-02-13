@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package daoInterfaces;
+package gf.dao.Interfaces;
 
 import gf.entity.DemandeMegavoiturage;
 import java.util.List;

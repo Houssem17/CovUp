@@ -5,8 +5,7 @@
  */
 package gf.test;
 
-import gf.controller.AfficherPersonneController;
-import gf.controller.ListData;
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

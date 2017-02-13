@@ -3,18 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package daoInterfaces;
+package gf.dao.Interfaces;
 
-import gf.entity.Actualite;
+import gf.entity.Shout;
 import java.util.List;
 
 /**
  *
  * @author Adel
  */
-public interface IActualite {
-    void ajouterActualite(Actualite a);
-    void supprimerActualite(Actualite a);
-    List<Actualite> listerActualite();
-    void modifierActualite(Actualite a);
+public interface IShout {
+    void ajouterShout(Shout sh);
+    void supprimerShout(Shout sh);
+    List<Shout> listerShout();
+    void modifierShout(Shout sh);
+    
 }
