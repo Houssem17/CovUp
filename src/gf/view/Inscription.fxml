@@ -10,17 +10,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="gf.controller.InscriptionController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gf.view.InscriptionController">
     <stylesheets>
         <URL value="@fxml.css" />
     </stylesheets>
    <children>
-      <ImageView fitHeight="446.0" fitWidth="616.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bg1" fitHeight="446.0" fitWidth="616.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/bgi.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="14.0" layoutY="14.0" text="Retour" textFill="WHITE">
+      <JFXButton fx:id="retour" layoutX="14.0" layoutY="14.0" onAction="#btnretour" text="Retour" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="39.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -29,15 +29,16 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXTextField layoutX="56.0" layoutY="77.0" promptText="Pseudo" />
-      <JFXTextField layoutX="56.0" layoutY="124.0" promptText="Nom" />
-      <JFXTextField layoutX="56.0" layoutY="165.0" promptText="Prenom" />
-      <JFXTextField layoutX="279.0" layoutY="77.0" promptText="Mot de passe" />
-      <JFXTextField layoutX="279.0" layoutY="124.0" promptText="Confirmer mot de passe" />
-      <JFXTextField layoutX="56.0" layoutY="244.0" promptText="Date de naissance" />
-      <JFXTextField layoutX="56.0" layoutY="281.0" promptText="Telephone" />
-      <JFXRadioButton layoutX="114.0" layoutY="217.0" text="Female" />
-      <JFXRadioButton layoutX="46.0" layoutY="217.0" text="Male" />
-      <JFXButton layoutX="280.0" layoutY="189.0" prefHeight="25.0" prefWidth="135.0" text="S'inscrire" textFill="WHITE" />
+      <JFXTextField fx:id="pseudo" layoutX="56.0" layoutY="77.0" promptText="Pseudo" />
+      <JFXTextField fx:id="nom" layoutX="56.0" layoutY="124.0" promptText="Nom" />
+      <JFXTextField fx:id="prenom" layoutX="56.0" layoutY="165.0" promptText="Prenom" />
+      <JFXTextField fx:id="mdp" layoutX="279.0" layoutY="77.0" promptText="Mot de passe" />
+      <JFXTextField fx:id="cmdp" layoutX="279.0" layoutY="124.0" promptText="Confirmer mot de passe" />
+      <JFXTextField fx:id="tel" layoutX="56.0" layoutY="281.0" promptText="Telephone" />
+      <JFXRadioButton fx:id="female" layoutX="114.0" layoutY="217.0" onAction="#select_female" text="Female" />
+      <JFXRadioButton fx:id="male" layoutX="46.0" layoutY="217.0" onAction="#select_male" text="Male" />
+      <JFXButton fx:id="btninsc" layoutX="280.0" layoutY="189.0" onAction="#btninsc" prefHeight="25.0" prefWidth="135.0" text="S'inscrire" textFill="WHITE" />
+      <DatePicker fx:id="date_de_naissance" layoutX="56.0" layoutY="249.0" prefHeight="25.0" prefWidth="167.0" promptText="Date de naissance" />
+      <JFXTextField fx:id="Cin" layoutX="56.0" layoutY="322.0" prefHeight="9.0" prefWidth="167.0" promptText="Cin" />
    </children>
 </AnchorPane>

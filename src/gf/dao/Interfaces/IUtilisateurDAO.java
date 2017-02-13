@@ -12,11 +12,11 @@ import java.util.List;
  *
  * @author Adel
  */
-public interface IUtilisateur {
-    List<Utilisateur> listerUtilisateurs();
-    Utilisateur consulterUtilisateur (int id);
+public interface IUtilisateurDAO<Utilisateur> {
+    //List<Utilisateur> listerUtilisateurs();
+   // Utilisateur consulterUtilisateur (int id);
     void ajouterUtilisateur(Utilisateur u);
-    void supprimerUtilisateur(int id);
-    void modifierUtilisateur(Utilisateur utilisateurModifie);
+    //void supprimerUtilisateur(int id);
+    //void modifierUtilisateur(Utilisateur utilisateurModifie);
     
 }

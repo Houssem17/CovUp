@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gf.view.ConnexionController">
+    <stylesheets>
+        <URL value="@fxml.css" />
+    </stylesheets>
+   <children>
+      <ImageView fx:id="bg" fitHeight="419.0" fitWidth="609.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/bg.png" />
+         </image>
+      </ImageView>
+      <PasswordField fx:id="mdp" layoutX="230.0" layoutY="234.0" promptText="Mot de Passe" />
+      <TextField fx:id="login" layoutX="230.0" layoutY="194.0" promptText="Login" />
+      <Button fx:id="cnx" layoutX="261.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnconnexion" prefHeight="25.0" prefWidth="87.0" text="Connexion" />
+      <Button fx:id="insc" layoutX="261.0" layoutY="316.0" mnemonicParsing="false" onAction="#btninscription" prefHeight="25.0" prefWidth="87.0" text="Inscription" />
+      <Button id="btnfb" graphicTextGap="0.0" layoutX="285.0" layoutY="354.0" mnemonicParsing="false" onAction="#btnfb" prefHeight="0.0" prefWidth="0.0" AnchorPane.rightAnchor="284.0" AnchorPane.topAnchor="354.0">
+         <graphic>
+            <ImageView fx:id="fb" fitHeight="30.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/fb.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="205.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

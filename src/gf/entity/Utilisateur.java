@@ -5,6 +5,7 @@
  */
 package gf.entity;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -22,8 +23,8 @@ public class Utilisateur {
      private String username;
      private String password;
      private int cin ;
-     private Date date_naissance ;
-     private Date date_inscrit ;
+     private LocalDate date_naissance ;
+     private LocalDate date_inscrit ;
      private int tel ;
      private boolean est_bloque ;
      private boolean est_admin;
@@ -31,7 +32,7 @@ public class Utilisateur {
     public Utilisateur() {
     }
 
-    public Utilisateur(int id, String nom, String prenom, char genre, String username, String password, int cin, Date date_naissance, Date date_inscrit, int tel, boolean est_bloque, boolean est_admin) {
+    public Utilisateur(int id, String nom, String prenom, char genre, String username, String password, int cin, LocalDate date_naissance, LocalDate date_inscrit, int tel, boolean est_bloque, boolean est_admin) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -40,7 +41,7 @@ public class Utilisateur {
         this.password = password;
         this.cin = cin;
         this.date_naissance = date_naissance;
-        this.date_inscrit = date_inscrit;
+        this.date_inscrit = date_inscrit; //LocalDate.now();
         this.tel = tel;
         this.est_bloque = est_bloque;
         this.est_admin = est_admin;
@@ -102,19 +103,19 @@ public class Utilisateur {
         this.cin = cin;
     }
 
-    public Date getDate_naissance() {
+    public LocalDate getDate_naissance() {
         return date_naissance;
     }
 
-    public void setDate_naissance(Date date_naissance) {
+    public void setDate_naissance(LocalDate date_naissance) {
         this.date_naissance = date_naissance;
     }
 
-    public Date getDate_inscrit() {
+    public LocalDate getDate_inscrit() {
         return date_inscrit;
     }
 
-    public void setDate_inscrit(Date date_inscrit) {
+    public void setDate_inscrit(LocalDate date_inscrit) {
         this.date_inscrit = date_inscrit;
     }
 

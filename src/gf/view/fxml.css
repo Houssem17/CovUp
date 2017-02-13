@@ -2,9 +2,12 @@
  * Empty Stylesheet file.
  */
 
-.mainFxmlClass {
+
 
     
    
-
+.jfx-hamburger StackPane {
+    
+    -fx-background-color :#ffffff ;
 }
+
