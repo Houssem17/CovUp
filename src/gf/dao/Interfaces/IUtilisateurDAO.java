@@ -15,6 +15,7 @@ import java.util.List;
 public interface IUtilisateurDAO<Utilisateur> {
     //List<Utilisateur> listerUtilisateurs();
    // Utilisateur consulterUtilisateur (int id);
+    public List<Utilisateur> displayAllList();
     void ajouterUtilisateur(Utilisateur u);
     //void supprimerUtilisateur(int id);
     //void modifierUtilisateur(Utilisateur utilisateurModifie);

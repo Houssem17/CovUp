@@ -16,6 +16,8 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +26,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.Toggle;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import static javax.xml.bind.DatatypeConverter.parseInteger;
@@ -40,6 +45,9 @@ public class InscriptionController implements Initializable {
      * Initializes the controller class.
      */
        
+      @FXML
+    private JFXTextField mail;
+    
     @FXML
     private JFXButton retour;
 
@@ -111,20 +119,32 @@ public class InscriptionController implements Initializable {
 
     @FXML
     void btninsc(ActionEvent event) {
-
+        String Email = mail.getText();
         String Nom = nom.getText();
         String Prenom = prenom.getText();
          String Pseudo = pseudo.getText();
-        char Genre = 'M';
+         
+    char Genre ='X';
+         
+        if (male.isSelected())
+        {   Genre = 'M';}
+        else if (female.isSelected())
+        { Genre ='F';}
+        else 
+        {
+        
+        }
         String Mdp = mdp.getText();
-       int CIN = Integer.parseInt(Cin.getText());
+        int CIN = Integer.parseInt(Cin.getText());
         LocalDate localdate = date_de_naissance.getValue();
         LocalDate localdate1=LocalDate.now();
         int Tel = Integer.parseInt(tel.getText());
+          
         
-        Utilisateur u = new Utilisateur(0,Nom,Prenom,Genre,Pseudo,Mdp,CIN,localdate,localdate1,Tel,false,false);
+        Utilisateur u = new Utilisateur(0,Email,Nom,Prenom,Genre,Pseudo,Mdp,CIN,localdate,localdate1,Tel,false,false);
             UtilisateurDAO udao = UtilisateurDAO.getInstance();
             udao.ajouterUtilisateur(u);
+            
          // int id, String nom, String prenom, char genre, String username, String password, int cin, LocalDate date_naissance, 
          // LocalDate date_inscrit, int tel, boolean est_bloque, boolean est_admin
     }

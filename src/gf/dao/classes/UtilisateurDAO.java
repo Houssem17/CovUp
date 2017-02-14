@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import gf.dao.Interfaces.IUtilisateurDAO;
+import java.sql.Date;
 import java.time.LocalDate;
 
 /**
@@ -42,14 +43,11 @@ public class UtilisateurDAO implements IUtilisateurDAO<Utilisateur>{
     @Override
     public void ajouterUtilisateur(Utilisateur u) {
         String req="insert into utilisateur"
-                + " (nom,prenom,genre,username,password,cin,date_naissance,date_inscrit,tel,est_bloque,est_admin)"
-                + " values ('"+u.getNom()+"','"+u.getPrenom()+"','"+u.getGenre()+"','"+u.getUsername()+"',"
+                + " (e_mail,nom,prenom,genre,username,password,cin,date_naissance,date_inscrit,tel,est_bloque,est_admin)"
+                + " values ('"+u.getE_mail()+"','"+u.getNom()+"','"+u.getPrenom()+"','"+u.getGenre()+"','"+u.getUsername()+"',"
                 + "'"+u.getPassword()+"','"+u.getCin()+"','"+u.getDate_naissance()+"','"+u.getDate_inscrit()+"',"
                 + "'"+u.getTel()+"','"+"0"+"','"+"0"+"')";
-        
-       //        int id,String nom, String prenom, char genre, String username, String password, int cin, 
-                //LocalDate date_naissance, LocalDate date_inscrit, int tel, boolean est_bloque, boolean est_admin
-        
+       
         
         try {
             st.executeUpdate(req);
@@ -57,4 +55,38 @@ public class UtilisateurDAO implements IUtilisateurDAO<Utilisateur>{
             Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }   
+    
+     public List<Utilisateur> displayAllList() {
+        String req="select * from utilisateur";
+        List<Utilisateur> list=new ArrayList<>();
+        
+        try {
+            rs=st.executeQuery(req);
+            while(rs.next()){
+                Utilisateur u=new Utilisateur();
+                u.setId(rs.getInt(1));
+                u.setE_mail(rs.getString(2));
+                u.setNom(rs.getString(3));
+                u.setPrenom(rs.getString(4));
+                u.setGenre(rs.getString(5).charAt(0));
+                u.setUsername(rs.getString(6));
+                u.setPassword(rs.getString(7));
+                u.setCin(rs.getInt(8));
+                u.setDate_naissance(rs.getDate(9).toLocalDate());
+                u.setDate_inscrit(rs.getDate(10).toLocalDate());
+                u.setTel(rs.getInt(11));
+                u.setEst_bloque(rs.getBoolean(12));
+                u.setEst_admin(rs.getBoolean(13));
+            
+                list.add(u);
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
+    
+    
+    
 }

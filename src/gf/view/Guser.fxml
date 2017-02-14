@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.layout.FlowPane?>
+
+<FlowPane fx:id="main" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gf.view.GuserController">
+   <children>
+      <AnchorPane prefHeight="472.0" prefWidth="719.0">
+         <children>
+            <ImageView fitHeight="532.0" fitWidth="719.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/bg.png" />
+               </image>
+            </ImageView>
+            <JFXTreeTableView fx:id="treeView" layoutX="118.0" layoutY="14.0" prefHeight="400.0" prefWidth="534.0" stylesheets="@main.css" />
+            <JFXTextField fx:id="Id" layoutX="136.0" layoutY="428.0" promptText="Entrer ID" unFocusColor="#029aa6" />
+            <JFXButton fx:id="mod" layoutX="321.0" layoutY="428.0" onAction="#btnmod" prefHeight="25.0" prefWidth="104.0" ripplerFill="#00d2ee" text="Modifier" textFill="#1bbf6e" />
+            <JFXButton fx:id="sup" layoutX="483.0" layoutY="428.0" onAction="#btnsup" prefHeight="25.0" prefWidth="104.0" ripplerFill="#ed0000" text="Supprimer" textFill="#c60000" />
+            <JFXHamburger fx:id="hamburger" layoutX="675.0" layoutY="22.0" stylesheets="@main.css" />
+            <JFXDrawer fx:id="drawer" prefHeight="472.0" prefWidth="112.0" />
+            <JFXButton fx:id="retour" layoutX="650.0" layoutY="426.0" onAction="#btnretour" text="Retour" textFill="#004f79" />
+         </children>
+      </AnchorPane>
+   </children>
+</FlowPane>

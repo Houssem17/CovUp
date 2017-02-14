@@ -17,6 +17,7 @@ public class Utilisateur {
     
     
      private int id ;
+     private String e_mail ;
      private String nom ;
      private String prenom ;
      private char genre;
@@ -32,8 +33,9 @@ public class Utilisateur {
     public Utilisateur() {
     }
 
-    public Utilisateur(int id, String nom, String prenom, char genre, String username, String password, int cin, LocalDate date_naissance, LocalDate date_inscrit, int tel, boolean est_bloque, boolean est_admin) {
+    public Utilisateur(int id,String e_mail , String nom, String prenom, char genre, String username, String password, int cin, LocalDate date_naissance, LocalDate date_inscrit, int tel, boolean est_bloque, boolean est_admin) {
         this.id = id;
+        this.e_mail = e_mail ;
         this.nom = nom;
         this.prenom = prenom;
         this.genre = genre;
@@ -53,6 +55,14 @@ public class Utilisateur {
 
     public void setId(int id) {
         this.id = id;
+    }
+    
+    public String getE_mail ()
+    {
+    return e_mail ;
+   }
+    public void setE_mail (String e_mail)
+    { this.e_mail = e_mail ;
     }
 
     public String getNom() {
