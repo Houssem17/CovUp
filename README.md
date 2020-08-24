@@ -1,2 +1,2 @@
-# Pidev-Godfathers
-Covoiturage-3A5
+# CovUp
+Desktop JavaFX
