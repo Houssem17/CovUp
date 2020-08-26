@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
@@ -7,22 +8,37 @@
 <?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.scene.layout.FlowPane?>
 
-<FlowPane fx:id="main" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gf.view.GuserController">
+<FlowPane fx:id="main" prefHeight="579.0" prefWidth="875.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gf.view.GuserController">
    <children>
       <AnchorPane prefHeight="472.0" prefWidth="719.0">
          <children>
-            <ImageView fitHeight="532.0" fitWidth="719.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="579.0" fitWidth="1045.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/bg.png" />
                </image>
             </ImageView>
-            <JFXTreeTableView fx:id="treeView" layoutX="118.0" layoutY="14.0" prefHeight="400.0" prefWidth="534.0" stylesheets="@main.css" />
-            <JFXTextField fx:id="Id" layoutX="136.0" layoutY="428.0" promptText="Entrer ID" unFocusColor="#029aa6" />
-            <JFXButton fx:id="mod" layoutX="321.0" layoutY="428.0" onAction="#btnmod" prefHeight="25.0" prefWidth="104.0" ripplerFill="#00d2ee" text="Modifier" textFill="#1bbf6e" />
-            <JFXButton fx:id="sup" layoutX="483.0" layoutY="428.0" onAction="#btnsup" prefHeight="25.0" prefWidth="104.0" ripplerFill="#ed0000" text="Supprimer" textFill="#c60000" />
-            <JFXHamburger fx:id="hamburger" layoutX="675.0" layoutY="22.0" stylesheets="@main.css" />
-            <JFXDrawer fx:id="drawer" prefHeight="472.0" prefWidth="112.0" />
-            <JFXButton fx:id="retour" layoutX="650.0" layoutY="426.0" onAction="#btnretour" text="Retour" textFill="#004f79" />
+            <JFXHamburger fx:id="hamburger" layoutX="829.0" layoutY="20.0" prefHeight="36.0" prefWidth="35.0" stylesheets="@main.css" />
+            <JFXDrawer fx:id="drawer" prefHeight="382.0" prefWidth="222.0" />
+            <Pane fx:id="affichageuser" layoutX="254.0" layoutY="81.0" prefHeight="412.0" prefWidth="596.0">
+               <children>
+                  <TableView fx:id="tuser" layoutY="45.0" prefHeight="336.0" prefWidth="596.0">
+                     <columns>
+                        <TableColumn fx:id="cpseudo" prefWidth="104.0" text="PSEUDO" />
+                        <TableColumn fx:id="cmail" prefWidth="92.0" text="EMAIL" />
+                        <TableColumn fx:id="ctel" minWidth="0.0" prefWidth="81.0" text="TELEPHONE" />
+                        <TableColumn fx:id="cdate" prefWidth="152.0" text="DATE INSCRIPTION" />
+                        <TableColumn fx:id="ccin" prefWidth="83.0" text="CIN" />
+                        <TableColumn fx:id="cbloq" prefWidth="87.0" text="ID" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="recherche" layoutX="102.0" layoutY="15.0" prefHeight="30.0" prefWidth="492.0" />
+                  <Label fx:id="re" layoutY="15.0" prefHeight="30.0" prefWidth="104.0" text="     Rechercher" textFill="WHITE" />
+                  <JFXButton fx:id="bloquer" layoutX="112.0" layoutY="381.0" onAction="#btnbloquer" prefHeight="30.0" prefWidth="104.0" ripplerFill="#4d4d4d" style="-fx-background-color: #ed0000;" text="Bloquer" textFill="WHITE" />
+                  <JFXButton fx:id="sup" layoutX="214.0" layoutY="382.0" onAction="#btnsup" prefHeight="30.0" prefWidth="104.0" ripplerFill="RED" style="-fx-background-color: #000000;" text="Supprimer" textFill="#c60000" />
+                  <JFXButton fx:id="retour" layoutX="484.0" layoutY="381.0" onAction="#btnretour" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #ffffff;" text="Retour" textFill="#004f79" />
+                  <JFXButton fx:id="contacter" layoutX="1.0" layoutY="381.0" onAction="#btncontact" prefHeight="30.0" prefWidth="110.0" ripplerFill="WHITE" style="-fx-background-color: #049068;" text="Contacter" textFill="WHITE" />
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
    </children>

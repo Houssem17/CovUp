@@ -16,9 +16,17 @@ import javafx.scene.layout.FlowPane;
 import com.jfoenix.controls.JFXTreeTableView;
 import com.jfoenix.controls.RecursiveTreeItem;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
+import gf.dao.classes.UtilisateurDAO;
+import gf.entity.Shout;
+import gf.entity.Utilisateur;
 import java.io.IOException;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -27,50 +35,113 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+ import java.util.Properties;
+//import javax.mail.Message;
+//import javax.mail.MessagingException;
+//import javax.mail.PasswordAuthentication;
+//import javax.mail.Session;
+//import javax.mail.Transport;
+///import javax.mail.internet.InternetAddress;
+//import javax.mail.internet.MimeMessage;
 
 public class GuserController implements Initializable {
 
-    @FXML
-    private FlowPane main;
-    @FXML
-    private JFXTreeTableView<User> treeView;
-    
-    @FXML
-    private JFXButton mod;
+  
     
     @FXML
     private JFXButton retour;
 
-   @FXML
+    @FXML
+    private TableView<Utilisateur> tuser;
+
+    @FXML
     private JFXDrawer drawer;
 
     @FXML
-    private JFXTextField Id;
+    private JFXButton bloquer;
+
+    @FXML
+    private FlowPane main;
+
+    @FXML
+    private TableColumn<Utilisateur, String> cpseudo;
+
+    @FXML
+    private TableColumn<Utilisateur, Number> ccin;
 
     @FXML
     private JFXHamburger hamburger;
 
     @FXML
+    private TableColumn<Utilisateur, Number> cbloq;
+
+    @FXML
+    private TextField recherche;
+
+    @FXML
     private JFXButton sup;
+
+    @FXML
+    private TableColumn<Utilisateur, LocalDate> cdate;
+
+    @FXML
+    private Label re;
+
+    @FXML
+    private JFXButton contacter;
 
     
 
     @FXML
-    void btnmod(ActionEvent event) {
+    private TableColumn<Utilisateur, Number> ctel;
 
-    }
+    @FXML
+    private TableColumn<Utilisateur, String> cmail;
 
+    @FXML
+    private Pane affichageuser;
     
+    private final ListData listdata = new ListData();
 
     @FXML
     void btnsup(ActionEvent event) {
 
     }
+
+  
+
+   
+
+  
+
+    @FXML
+    void btnbloquer(ActionEvent event) {
+             
+
+    }
+
+
+
+    @FXML
+    void btncontact(ActionEvent event) {
+
+    }
+
+
+
 
     
       @FXML
@@ -92,15 +163,60 @@ public class GuserController implements Initializable {
 
     }
 
-    
-    
-    @FXML
-    void ed0000(ActionEvent event) {
-
-    }
+     private void settable(){
+        
+          tuser.setItems(listdata.getUsers());
+        cmail.setCellValueFactory(cell -> cell.
+                getValue().getE_mailProperty());
+        cpseudo.setCellValueFactory(cell -> cell.
+                getValue().getUsernameProperty());
+        cbloq.setCellValueFactory(cell -> cell.
+                getValue().getIdProperty());
+        ctel.setCellValueFactory(cell -> cell.
+                getValue().getTelProperty());
+        ccin.setCellValueFactory(cell -> cell.
+                getValue().getCinProperty());
+        cdate.setCellValueFactory(cell -> cell.
+                getValue().getDate_inscritProperty());
+        }
+ 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        
+        
+       
+        settable();
+        
+         recherche.textProperty().addListener(new ChangeListener<String>()  {
+            @Override
+            public void changed(ObservableValue<? extends String> observable,
+                                String oldValue, String newValue) {
+                UtilisateurDAO udao = new UtilisateurDAO();
+                List<Utilisateur> liste = null;
+                try {
+                    liste = udao.search(recherche.getText());
+                    ObservableList<Utilisateur> data = FXCollections.observableArrayList(liste);
+                   tuser.setItems(data);
+
+                } catch (SQLException ex) {
+                    Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+         
+         settable();
+  
+        
+       /* tuser.setOnMouseClicked(event->{
+        idLabel.setText(String.valueOf(listdata.getUsers()
+                .get(tuser.getSelectionModel().getSelectedIndex())
+                .getId()));*/
+        
+        
+        
+        
         
          HamburgerBackArrowBasicTransition transition = new HamburgerBackArrowBasicTransition(hamburger);
         transition.setRate(-1);
@@ -115,64 +231,19 @@ public class GuserController implements Initializable {
                 drawer.open();
         });
         
-        
-        JFXTreeTableColumn<User, String> deptName = new JFXTreeTableColumn<>("ID");
-        deptName.setPrefWidth(150);
-        deptName.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<User, String>, ObservableValue<String>>() {
-            @Override
-            public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<User, String> param) {
-                return param.getValue().getValue().department;
-            }
-        });
-
-        JFXTreeTableColumn<User, String> ageCol = new JFXTreeTableColumn<>("Nom");
-        ageCol.setPrefWidth(150);
-        ageCol.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<User, String>, ObservableValue<String>>() {
-            @Override
-            public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<User, String> param) {
-                return param.getValue().getValue().age;
-            }
-        });
-
-        JFXTreeTableColumn<User, String> nameCol = new JFXTreeTableColumn<>("Prenom");
-        nameCol.setPrefWidth(150);
-        nameCol.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<User, String>, ObservableValue<String>>() {
-            @Override
-            public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<User, String> param) {
-                return param.getValue().getValue().userName;
-            }
-        });
-        
-     
-
-        ObservableList<User> users = FXCollections.observableArrayList();
-        users.add(new User("1", "houssem", "fsdg"));
-        users.add(new User("2", "sqf", "dfh"));
-        users.add(new User("3", "xxx", "qgddsg"));
-     
-
-        final TreeItem<User> root = new RecursiveTreeItem<User>(users, RecursiveTreeObject::getChildren);
-        treeView.getColumns().setAll(deptName, ageCol, nameCol);
-        treeView.setRoot(root);
-        treeView.setShowRoot(false);
-
-    }
-
-    @FXML
-    private void filter(ActionEvent event) {
-    }
-
-    class User extends RecursiveTreeObject<User> {
-
-        StringProperty userName;
-        StringProperty age;
-        StringProperty department;
-
-        public User(String department, String age, String userName) {
-            this.department = new SimpleStringProperty(department);
-            this.userName = new SimpleStringProperty(userName);
-            this.age = new SimpleStringProperty(age);
+        try {
+            VBox box = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+            drawer.setSidePane(box);
+        } catch (IOException ex) {
+            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
+             
+        
+        
+        
+        
+        
+        
 
     }
     

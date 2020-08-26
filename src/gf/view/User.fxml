@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gf.view.UserController">
+   <children>
+      <ImageView fitHeight="503.0" fitWidth="749.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/bg.png" />
+         </image>
+      </ImageView>
+      <JFXHamburger fx:id="hamburger" layoutX="705.0" layoutY="23.0" stylesheets="@fxml.css" />
+      <JFXDrawer fx:id="drawer" prefHeight="492.0" prefWidth="195.0" />
+      <JFXButton fx:id="ctrajet" layoutX="209.0" layoutY="59.0" onAction="#btnctrajet" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/u2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="gmvoi" layoutX="586.0" layoutY="327.0" onAction="#btngmvoi" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
+         <graphic>
+            <ImageView fitHeight="144.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/u7.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="gshout" layoutX="388.0" layoutY="59.0" onAction="#btngshout" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
+         <graphic>
+            <ImageView fx:id="ptrajet" fitHeight="150.0" fitWidth="200.0" onDragDetected="#btnptrajet" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/u1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="gevent" layoutX="583.0" layoutY="51.0" onAction="#btngevent" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
+         <graphic>
+            <ImageView fitHeight="134.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/u3.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="gblog" layoutX="583.0" layoutY="189.0" onAction="#btngblog" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
+         <graphic>
+            <ImageView fitHeight="142.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/u4.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="boite" layoutX="209.0" layoutY="243.0" onAction="#btnboite" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/u5.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="stat" onAction="#btnstat" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="400.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/u6.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

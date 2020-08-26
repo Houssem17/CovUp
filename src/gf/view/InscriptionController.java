@@ -13,6 +13,7 @@ import gf.entity.Utilisateur;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.Properties;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,6 +32,13 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+//import javax.mail.Message;
+//import javax.mail.MessagingException;
+//import javax.mail.PasswordAuthentication;
+//import javax.mail.Session;
+//import javax.mail.Transport;
+//import javax.mail.internet.InternetAddress;
+//import javax.mail.internet.MimeMessage;
 import static javax.xml.bind.DatatypeConverter.parseInteger;
 
 /**
@@ -119,6 +127,7 @@ public class InscriptionController implements Initializable {
 
     @FXML
     void btninsc(ActionEvent event) {
+        
         String Email = mail.getText();
         String Nom = nom.getText();
         String Prenom = prenom.getText();
@@ -145,13 +154,77 @@ public class InscriptionController implements Initializable {
             UtilisateurDAO udao = UtilisateurDAO.getInstance();
             udao.ajouterUtilisateur(u);
             
+           
+   
+      // Recipient's email ID needs to be mentioned.
+      String to = Email;//change accordingly
+/*
+      // Sender's email ID needs to be mentioned
+      String from = "houssembenaicha7@gmail.com";//change accordingly
+      final String username = "houssembenaicha7@gmail.com";//change accordingly
+      final String password = "hb@-brigate";//change accordingly
+
+      // Assuming you are sending email through relay.jangosmtp.net
+      String host = "smtp.gmail.com";
+
+      Properties props = new Properties();
+      props.put("mail.smtp.auth", "true");
+      props.put("mail.smtp.starttls.enable", "true");
+      props.put("mail.smtp.host", host);
+      props.put("mail.smtp.port", "587");
+
+      // Get the Session object./*
+      Session session = Session.getInstance(props,
+      new javax.mail.Authenticator() {
+             protected PasswordAuthentication getPasswordAuthentication() {
+            return new PasswordAuthentication(username, password);
+         }
+      });
+
+      try {
+         // Create a default MimeMessage object.
+         Message message = new MimeMessage(session);
+
+         // Set From: header field of the header.
+         message.setFrom(new InternetAddress(from));
+
+         // Set To: header field of the header.
+         message.setRecipients(Message.RecipientType.TO,
+         InternetAddress.parse(to));
+
+         // Set Subject: header field
+         message.setSubject("INSCRIPTION REUSSITE !");
+
+         // Now set the actual message
+         message.setText("Inscription Réussie ! Votre compte a été correctement créé.");
+
+         // Send message
+         Transport.send(message);
+
+         System.out.println("Sent message successfully....");
+
+      } catch (MessagingException e) {
+            throw new RuntimeException(e);
+      }*/
+   
+
+   
+            
+            
          // int id, String nom, String prenom, char genre, String username, String password, int cin, LocalDate date_naissance, 
          // LocalDate date_inscrit, int tel, boolean est_bloque, boolean est_admin
     }
     
     
+    
+
+    
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+       
         // TODO
     }    
     

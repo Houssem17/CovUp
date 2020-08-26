@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorpane" prefHeight="467.0" prefWidth="749.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gf.view.AdminController">
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="467.0" prefWidth="749.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gf.view.AdminController">
     <stylesheets>
         <URL value="@fxml.css" />
     </stylesheets>
@@ -20,87 +21,78 @@
          </image>
       </ImageView>
       <JFXHamburger fx:id="hamburger" layoutX="705.0" layoutY="31.0" />
-      <JFXDrawer fx:id="drawer" prefHeight="485.0" prefWidth="160.0" />
-      <JFXButton fx:id="guser" layoutX="189.0" layoutY="14.0" onAction="#btnguser" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
+      <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" overLayVisible="false" prefHeight="406.0" prefWidth="166.0" />
+      <JFXButton fx:id="guser" layoutX="209.0" layoutY="14.0" onAction="#btnguser" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/g1.png" />
                </image>
             </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="goffres" layoutX="345.0" layoutY="14.0" onAction="#btngoffres" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
+         </graphic></JFXButton>
+      <JFXButton fx:id="goffres" layoutX="375.0" layoutY="14.0" onAction="#btngoffres" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/g2.png" />
                </image>
             </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="gagences" layoutX="501.0" layoutY="14.0" onAction="#btngagences" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
+         </graphic></JFXButton>
+      <JFXButton fx:id="gagences" layoutX="539.0" layoutY="14.0" onAction="#btngagences" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/g3.png" />
                </image>
             </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="gmvoi" layoutX="189.0" layoutY="172.0" onAction="#btngmvoi" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
+         </graphic></JFXButton>
+      <JFXButton fx:id="gmvoi" layoutX="209.0" layoutY="172.0" onAction="#btngmvoi" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/g4.png" />
                </image>
             </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="gshout" layoutX="345.0" layoutY="172.0" onAction="#btngshout" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
+         </graphic></JFXButton>
+      <JFXButton fx:id="gshout" layoutX="375.0" layoutY="172.0" onAction="#btngshout" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/g5.png" />
                </image>
             </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="gevent" layoutX="501.0" layoutY="172.0" onAction="#btngevent" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
+         </graphic></JFXButton>
+      <JFXButton fx:id="gevent" layoutX="539.0" layoutY="172.0" onAction="#btngevent" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/g6.png" />
                </image>
             </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="gblog" layoutX="189.0" layoutY="330.0" onAction="#btngblog" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
+         </graphic></JFXButton>
+      <JFXButton fx:id="gblog" layoutX="209.0" layoutY="327.0" onAction="#btngblog" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/g7.png" />
                </image>
             </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="boite" layoutX="345.0" layoutY="330.0" onAction="#btnboite" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
+         </graphic></JFXButton>
+      <JFXButton fx:id="boite" layoutX="375.0" layoutY="327.0" onAction="#btnboite" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/g8.png" />
                </image>
             </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="stat" layoutX="501.0" layoutY="330.0" onAction="#btnstat" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
+         </graphic></JFXButton>
+      <JFXButton fx:id="stat" layoutX="539.0" layoutY="327.0" onAction="#btnstat" prefHeight="66.0" prefWidth="123.0" text="|" textFill="TRANSPARENT">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/g9.png" />
                </image>
             </ImageView>
-         </graphic>
-      </JFXButton>
+         </graphic></JFXButton>
    </children>
 </AnchorPane>

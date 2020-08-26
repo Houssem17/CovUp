@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
@@ -16,28 +17,28 @@
         <URL value="@fxml.css" />
     </stylesheets>
    <children>
-      <ImageView fitHeight="419.0" fitWidth="609.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bg" fitHeight="419.0" fitWidth="609.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/bg.png" />
+            <Image url="@img/bg0.png" />
          </image>
       </ImageView>
-      <PasswordField layoutX="230.0" layoutY="234.0" promptText="Mot de Passe" />
-      <TextField layoutX="230.0" layoutY="194.0" promptText="Login" />
-      <Button layoutX="261.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnconnexion" prefHeight="25.0" prefWidth="87.0" text="Connexion" />
-      <Button layoutX="261.0" layoutY="316.0" mnemonicParsing="false" onAction="#btninscription" prefHeight="25.0" prefWidth="87.0" text="Inscription" />
-      <Button id="btnfb" graphicTextGap="0.0" layoutX="285.0" layoutY="354.0" mnemonicParsing="false" onAction="#btnfb" prefHeight="0.0" prefWidth="0.0" AnchorPane.rightAnchor="284.0" AnchorPane.topAnchor="354.0">
+      <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="205.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/logo.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="login" focusColor="#0482a8" layoutX="231.0" layoutY="188.0" promptText="Login" unFocusColor="#00a3bc" />
+      <JFXPasswordField fx:id="mdp" focusColor="#0091c6" layoutX="231.0" layoutY="232.0" promptText="Mot de Passe" unFocusColor="#00afc6" />
+      <JFXButton fx:id="cnx" layoutX="224.0" layoutY="276.0" onAction="#btnconnexion" prefHeight="42.0" prefWidth="156.0" text="Connexion" textFill="#00a7b0" />
+      <JFXButton fx:id="insc" layoutX="224.0" layoutY="317.0" onAction="#btninscription" prefHeight="42.0" prefWidth="156.0" text="Inscription" textFill="#00904f" />
+      <JFXButton fx:id="fb" layoutX="380.0" layoutY="318.0" onAction="#btnfb" prefHeight="42.0" prefWidth="58.0" ripplerFill="#0099ff00" text="|" textFill="TRANSPARENT">
          <graphic>
-            <ImageView fitHeight="30.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="ifb" fitHeight="29.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/fb.png" />
                </image>
             </ImageView>
          </graphic>
-      </Button>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="205.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img/logo.png" />
-         </image>
-      </ImageView>
+      </JFXButton>
    </children>
 </AnchorPane>
