@@ -1,2 +1,3 @@
 # CovUp
-Desktop JavaFX
+Pidev
+Desktop-Java
